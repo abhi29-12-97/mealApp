@@ -8,32 +8,35 @@
     <title>Document</title>
   </head>
   <body onload="loader()">
-    <h1>welcome to Meal Page</h1>
+    <!-- navbar starts-->
     <div class="navBar">
+      <!-- div for logo which also acts as moving to home page -->
       <div class="logo">
         <a href="/index.html"
           ><img
             id="logo-img"
-            src="https://cdn-icons-png.flaticon.com/512/3107/3107249.png"
+            src="https://dcassetcdn.com/design_img/375573/141837/141837_3031164_375573_image.jpg"
         /></a>
       </div>
+      <!-- div for the meal app name -->
+      <div class="Tag-Line">
+        <h4 class="h2">Why wait?</h4>
+        <h4 class="h6">Order Now</h4>
+      </div>
+      <!-- moving to the recent tabs -->
       <div class="recents"></div>
-      <div class="favourites">
-        <a href="/favourite.html">Favourite</a>
+      <!-- link to move to favourite list page -->
+      <div class="favourite-tab-link">
+        <a href="/favourite.html">Favourites</a>
       </div>
-      <div class="search">
-        <input type="search" id="search-bar" meal-search />
-      </div>
+      <h1 style="margin-left: 240px; margin-top: 15px">Good Choice!!</h1>
     </div>
-    <div meal-name></div>
-    <script>
-      let ele = [];
-      loader = () => {
-        ele = JSON.parse(sessionStorage.getItem("meal"));
-        console.log(ele);
-        let mealList = document.querySelector("[meal-name]");
-        mealList.textContent = ele[0].strMeal;
-      };
-    </script>
+    <!-- nav bar ends -->
+    <div class="meal-name" meal-name></div>
+    <div class="meal-image-desc">
+      <div class="meal-image"><img src="" meal-image /></div>
+      <div class="meal-desc" meal-desc></div>
+    </div>
+    <script src="mealDetails.js"></script>
   </body>
 </html>

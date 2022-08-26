@@ -116,7 +116,8 @@ body {
   font-family: sans-serif;
   margin-top: 10px;
 }
-.results button {
+.results button,
+.favourite-results button {
   display: inline-block;
   padding: 5px 10px;
   font-size: 18px;
@@ -135,11 +136,13 @@ body {
   width: 160px;
 }
 
-.results button:hover {
+.results button:hover,
+.favourite-results button:hover {
   background-color: #3e8e41;
 }
 
-.results button:active {
+.results button:active,
+.favourite-results button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -149,7 +152,54 @@ body {
   display: none;
 }
 /* styling favourite page */
+.favourite-results {
+  display: flex;
+  font-family: Verdana;
+  margin-top: 20px;
+  height: 200px;
+}
 .favourite-dish-image {
   height: 200px;
   width: 200px;
+}
+.favourite-dish-det {
+  margin-left: 30px;
+  width: 900px;
+}
+.favourite-dish-name {
+  font-size: xx-large;
+  color: bisque;
+}
+.favourite-dish-category {
+  font-weight: 700;
+  color: wheat;
+}
+.favourite-dish-description {
+  margin-top: 20px;
+  font-size: small;
+  height: 130px;
+  overflow: scroll;
+  font-weight: 500;
+}
+.favourite-results button {
+  height: 50px;
+  margin-top: 60px;
+}
+/* meal page */
+.meal-name {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(207, 216, 218);
+}
+.meal-image-desc {
+  display: flex;
+  margin-top: 20px;
+}
+.meal-image img {
+  height: 500px;
+}
+.meal-desc {
+  margin-left: 20px;
+  width: 700px;
 }
