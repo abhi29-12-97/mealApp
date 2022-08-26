@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body onload="loader()">
+    <h1>welcome to Meal Page</h1>
+    <div class="navBar">
+      <div class="logo">
+        <a href="/index.html"
+          ><img
+            id="logo-img"
+            src="https://cdn-icons-png.flaticon.com/512/3107/3107249.png"
+        /></a>
+      </div>
+      <div class="recents"></div>
+      <div class="favourites">
+        <a href="/favourite.html">Favourite</a>
+      </div>
+      <div class="search">
+        <input type="search" id="search-bar" meal-search />
+      </div>
+    </div>
+    <div meal-name></div>
+    <script>
+      let ele = [];
+      loader = () => {
+        ele = JSON.parse(sessionStorage.getItem("meal"));
+        console.log(ele);
+        let mealList = document.querySelector("[meal-name]");
+        mealList.textContent = ele[0].strMeal;
+      };
+    </script>
+  </body>
+</html>

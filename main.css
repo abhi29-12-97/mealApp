@@ -1,0 +1,33 @@
+.navBar div {
+  display: inline;
+}
+#logo-img {
+  height: 70px;
+}
+.meal-list {
+  visibility: hidden;
+  display: none;
+}
+.results div {
+  display: inline;
+}
+.dish-image {
+  height: 50px;
+  width: 50px;
+}
+.dish-details {
+  display: inline-block;
+}
+.meal-list-update {
+  visibility: inherit;
+  display: block;
+  z-index: 1;
+  position: absolute;
+}
+.hide {
+  display: none;
+}
+.favourite-dish-image {
+  height: 200px;
+  width: 200px;
+}

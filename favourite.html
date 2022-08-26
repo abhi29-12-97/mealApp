@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <title>Favourite Meals</title>
+  </head>
+  <body onload="loader()">
+    <div id="favourite-page">
+      <!-- navbar -->
+      <div class="navBar">
+        <div class="logo">
+          <a href="/index.html"
+            ><img
+              id="logo-img"
+              src="https://cdn-icons-png.flaticon.com/512/3107/3107249.png"
+          /></a>
+        </div>
+        <div class="recents"></div>
+        <div class="favourites">
+          <a href="/favourite.html">Favourite</a>
+        </div>
+        <div class="search">
+          <input type="search" id="search-bar" meal-search />
+        </div>
+      </div>
+      <div class="favourite-list" favourite-meal-list></div>
+
+      <!-- template for favourite meal list -->
+
+      <template favourite-list-template>
+        <div class="results">
+          <div>
+            <img src="" class="favourite-dish-image" favourite-dish-image />
+          </div>
+          <div>
+            <div>
+              <div class="favourite-dish-name" favourite-dish-name></div>
+              <div
+                class="favourite-dish-category"
+                favourite-dish-category
+              ></div>
+            </div>
+            <div
+              class="favourite-dish-description"
+              favourite-dish-description
+            ></div>
+          </div>
+          <button
+            type="button"
+            id=""
+            onclick="removeFromFavourite(this.id)"
+            remove-button
+          >
+            Remove From Favourite
+          </button>
+        </div>
+      </template>
+    </div>
+
+    <script src="favouriteScript.js"></script>
+  </body>
+</html>
