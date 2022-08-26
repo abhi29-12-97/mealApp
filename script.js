@@ -7,7 +7,14 @@ const favouriteButton =
 
 let meals = [];
 let favourites = [];
-//adding add to favourite
+
+//onloading of the page updating the local storage and favourites array so that we don't store duplicates
+updateLocal = () => {
+  favourites = JSON.parse(localStorage.getItem("Favourite"));
+  localStorage.setItem("Favourite", JSON.stringify(favourites));
+};
+
+//adding add to favourite on click of add to favourite button
 addToFavourite = (e) => {
   var newFavourite = meals.filter((item) => item.idMeal === e);
   favourites = JSON.parse(localStorage.getItem("Favourite"));
@@ -18,12 +25,15 @@ addToFavourite = (e) => {
   localStorage.setItem("Favourite", JSON.stringify(favourites));
   console.log(favourites);
 };
+
+// creating session cookie for meal page so that everytime we click a meal we can show that data only
 mealPage = (e) => {
   var newFavourite = meals.filter((item) => item.idMeal === e);
   console.log(newFavourite);
   sessionStorage.setItem("meal", JSON.stringify(newFavourite));
 };
-//adding search bar event listener
+
+//adding search bar event listener so on input we filter the results and show only the applicable items and hiding the rest that doesn't match the value
 searchBar.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
   if (value.length == 0) {
@@ -37,7 +47,7 @@ searchBar.addEventListener("input", (e) => {
   });
 });
 
-//fetching the ApI
+//fetching the ApI from the meal API
 fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
   .then((response) => response.json())
   .then((data) => {

@@ -7,29 +7,42 @@
     <link rel="stylesheet" href="main.css" />
     <title>Meal App</title>
   </head>
-  <body>
-    <!-- navbar -->
+  <body onload="updateLocal()">
+    <!-- navbar starts-->
     <div class="navBar">
+      <!-- div for logo which also acts as moving to home page -->
       <div class="logo">
         <a href="/index.html"
           ><img
             id="logo-img"
-            src="https://cdn-icons-png.flaticon.com/512/3107/3107249.png"
+            src="https://dcassetcdn.com/design_img/375573/141837/141837_3031164_375573_image.jpg"
         /></a>
       </div>
-      <div class="recents"></div>
-      <div class="favourites">
-        <a href="/favourite.html">Favourite</a>
+      <!-- div for the meal app name -->
+      <div class="Tag-Line">
+        <h4 class="h2">Why wait?</h4>
+        <h4 class="h6">Order Now</h4>
       </div>
+      <!-- moving to the recent tabs -->
+      <div class="recents"></div>
+      <!-- link to move to favourite list page -->
+      <div class="favourite-tab-link">
+        <a href="/favourite.html">Favourites</a>
+      </div>
+      <!-- search bar of our page -->
       <div class="search">
-        <input type="search" id="search-bar" meal-search />
+        <input type="search" id="search-bar" placeholder="search" meal-search />
       </div>
     </div>
-
+    <!-- dynamic meal list page which is visible only when we search for any food item -->
     <div class="meal-list" meal-list></div>
+    <!-- main div which contains different list of food items -->
     <div class="main">hi</div>
-    <template meal-list-template>
+
+    <!-- template for our meal list items -->
+    <template class="meal-list-template" meal-list-template>
       <div class="results">
+        <!-- link to move to meal details page containing meal name and image clicking on which we move to the page where we have details of this meal -->
         <a
           class="links"
           href="mealDetails.html"
@@ -40,7 +53,7 @@
           <img src="" class="dish-image" dish-image />
           <div class="dish-name" dish-name></div>
         </a>
-
+        <!-- button to add to favourite list -->
         <button
           type="button"
           id=""

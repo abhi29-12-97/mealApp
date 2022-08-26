@@ -7,28 +7,40 @@
   <body onload="loader()">
     <div id="favourite-page">
       <!-- navbar -->
+      <!-- navbar -->
       <div class="navBar">
         <div class="logo">
           <a href="/index.html"
             ><img
               id="logo-img"
-              src="https://cdn-icons-png.flaticon.com/512/3107/3107249.png"
+              src="https://dcassetcdn.com/design_img/375573/141837/141837_3031164_375573_image.jpg"
           /></a>
         </div>
-        <div class="recents"></div>
-        <div class="favourites">
-          <a href="/favourite.html">Favourite</a>
+        <div class="Tag-Line">
+          <h4 class="h2">Why wait?</h4>
+          <h4 class="h6">Order Now</h4>
         </div>
-        <div class="search">
-          <input type="search" id="search-bar" meal-search />
+        <div class="recents"></div>
+        <div class="favourite-tab-link">
+          <a href="/favourite.html">Favourites</a>
+        </div>
+        <div class="search" meal-search>
+          <input
+            type="search"
+            id="search-bar"
+            placeholder="search"
+            meal-search
+          />
         </div>
       </div>
+
+      <!-- navbar ends -->
       <div class="favourite-list" favourite-meal-list></div>
 
       <!-- template for favourite meal list -->
 
       <template favourite-list-template>
-        <div class="results">
+        <div class="favourite-results">
           <div>
             <img src="" class="favourite-dish-image" favourite-dish-image />
           </div>

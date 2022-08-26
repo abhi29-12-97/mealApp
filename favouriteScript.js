@@ -6,6 +6,8 @@ const favouriteButton =
 let meals = [];
 let list = [];
 var count = 0;
+
+//loade function which will load the items from the local storage such that everyTime we load the favourite page we only gets the items which we have added and favourites
 function loader() {
   console.log("loading.....");
   list = JSON.parse(localStorage.getItem("Favourite"));
@@ -30,7 +32,7 @@ function loader() {
   });
 }
 
-//remove from favourite
+//removing the item from favourite list
 removeFromFavourite = (e) => {
   console.log(list);
   var index = list
@@ -39,25 +41,16 @@ removeFromFavourite = (e) => {
     })
     .indexOf(e);
   meals[index].boxElement.classList.toggle("hide", true);
+  meals.splice(index, 1);
   list.splice(index, 1);
   localStorage.setItem("Favourite", JSON.stringify(list));
 };
-//adding search bar event listener
+
+//adding search bar event listener only search for the items that we have added in our favourite list
 searchBar.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
-  //   mealList.classList.add("meal-list-update");
-  //   var div = document.createElement("div");
-  div.textContent = "NO Results Found Please ADD";
   meals.forEach((meal) => {
     const isVisible = meal.strMeal.toLowerCase().includes(value);
     meal.boxElement.classList.toggle("hide", !isVisible);
   });
-  //   count += 1;
-  //   if (count <= 1 && ) {
-  //     mealList.appendChild(div);
-  //     return;
-  //   }
-  //   if (count >= 2) {
-  //     mealList.removeChild(div);
-  //   }
 });
